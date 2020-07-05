@@ -1,10 +1,12 @@
+from pymel.core import *
+
 ls(sl=1)
 selected()
 
 ls('pShere1')
 ls('pSphere*')
-ls('pSphere*,' type=nt.Transform)
-ls('pSphere*,' type='transform')
+ls('pSphere*,', type=nt.Transform)
+ls('pSphere*,', type='transform')
 
 ls(type='lambert')
 
