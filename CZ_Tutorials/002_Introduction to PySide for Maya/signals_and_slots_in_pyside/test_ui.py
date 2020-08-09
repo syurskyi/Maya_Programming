@@ -1,9 +1,10 @@
 import traceback
 
-from PySide import QtCore
-from PySide import QtGui
+from PySide2 import QtCore
+from PySide2 import QtGui
+from PySide2 import QtWidgets
 
-from shiboken import wrapInstance
+from shiboken2 import wrapInstance
 
 import maya.cmds as cmds
 import maya.OpenMayaUI as omui
@@ -14,11 +15,11 @@ def maya_main_window():
     Return the Maya main window widget as a Python object
     '''
     main_window_ptr = omui.MQtUtil.mainWindow()
-    return wrapInstance(long(main_window_ptr), QtGui.QWidget)
+    return wrapInstance(long(main_window_ptr), QtWidgets.QWidget)
     
 
 
-class TestUi(QtGui.QDialog):
+class TestUi(QtWidgets.QDialog):
     
     test_signal = QtCore.Signal()
     
@@ -40,12 +41,12 @@ class TestUi(QtGui.QDialog):
         '''
         Create the widgets for the dialog
         '''
-        self.push_button = QtGui.QPushButton("QPushButton")
-        self.check_box_01 = QtGui.QCheckBox("QCheckBox 01")
-        self.check_box_02 = QtGui.QCheckBox("QCheckBox 02")
+        self.push_button = QtWidgets.QPushButton("QPushButton")
+        self.check_box_01 = QtWidgets.QCheckBox("QCheckBox 01")
+        self.check_box_02 = QtWidgets.QCheckBox("QCheckBox 02")
         
-        self.line_edit = QtGui.QLineEdit("QLineEdit")
-        self.list_wdg = QtGui.QListWidget()
+        self.line_edit = QtWidgets.QLineEdit("QLineEdit")
+        self.list_wdg = QtWidgets.QListWidget()
         self.list_wdg.addItems(["QListWidgetItem 01", 
                                 "QListWidgetItem 02", 
                                 "QListWidgetItem 03", 
@@ -57,12 +58,12 @@ class TestUi(QtGui.QDialog):
         '''
         Create the layouts and add widgets
         '''
-        check_box_layout = QtGui.QHBoxLayout()
+        check_box_layout = QtWidgets.QHBoxLayout()
         check_box_layout.setContentsMargins(2, 2, 2, 2)
         check_box_layout.addWidget(self.check_box_01)
         check_box_layout.addWidget(self.check_box_02)
         
-        main_layout = QtGui.QVBoxLayout()
+        main_layout = QtWidgets.QVBoxLayout()
         main_layout.setContentsMargins(6, 6, 6, 6)
         
         main_layout.addWidget(self.push_button)
