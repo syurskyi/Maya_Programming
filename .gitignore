@@ -111,3 +111,9 @@ venv/
 *.iml
 out
 gen
+/CZ_Tutorials/006_FFmpeg in Production/_audio/
+.wav
+/CZ_Tutorials/006_FFmpeg in Production/_image_sequences/
+.png
+/CZ_Tutorials/006_FFmpeg in Production/_media/
+.mp4

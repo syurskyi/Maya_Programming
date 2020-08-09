@@ -1,0 +1,27 @@
+Overlay
+
+ffmpeg.exe -y -i video.mp4 -i watermark.png -filter_complex "overlay=(W-w-20):(H-h-20)" output.mp4
+
+
+
+Overlay with Image Scaling (fixed pixel)
+
+.\ffmpeg.exe - y-i video.mp4 -i watermark.png -filter_complex "[1]scale=100:-1[image_scaled];[0][image_scaled]overlay=(W-w-20):(H-h-20)" output.mp4
+
+
+
+Overlay with Image Scaling (percentage of original image width)
+
+ffmpeg.exe -y -i video.mp4 -i watermark.png -filter_complex "[1]scale=w=iw/2:h=-1[image_scaled];[0][image_scaled]overlay=(W-w-20):(H-h-20)" output.mp4
+
+
+
+Overlay with Image Transparency Adjustment
+
+ffmpeg.exe -y -i video.mp4 -i watermark.png -filter_complex "[1]lut=a=val*0.7[image_final];[0][image_final]overlay=(W-w-20):(H-h-20)" output.mp4
+
+
+
+Overlay with Image Scaling and Transparency Adjustment
+
+ffmpeg.exe -y -i video.mp4 -i watermark.png -filter_complex "[1]scale=w=iw/2:h=-1[image_scaled];[image_scaled]lut=a=val*0.7[image_final];[0][image_final]overlay=(W-w-20):(H-h-20)" output.mp4
