@@ -10,7 +10,7 @@ import maya.OpenMaya as om
 import maya.OpenMayaUI as omui
 
 
-class ZurbriggRetimingUtils(object):
+class RetimingUtils(object):
 
     @classmethod
     def retime_keys(cls, retime_value, incremental, move_to_next):
@@ -202,7 +202,7 @@ class ZurbriggRetimingUi(QtWidgets.QDialog):
 
             cmds.undoInfo(openChunk=True)
             try:
-                ZurbriggRetimingUtils.retime_keys(retiming_data[0], retiming_data[1], move_to_next)
+                RetimingUtils.retime_keys(retiming_data[0], retiming_data[1], move_to_next)
             except:
                 traceback.print_exc()
                 om.MGlobal.displayError("Retime error occurred. See script editor for details.")

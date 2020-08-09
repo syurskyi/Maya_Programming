@@ -2,7 +2,7 @@ import maya.cmds as cmds
 import maya.mel as mel
 
 
-class ZurbriggRetimingUtils(object):
+class RetimingUtils(object):
 
     @classmethod
     def set_current_time(cls, time):
@@ -43,5 +43,5 @@ class ZurbriggRetimingUtils(object):
 
 if __name__ == "__main__":
 
-    print(ZurbriggRetimingUtils.get_last_keyframe_time())
-    # ZurbriggRetimingUtils.change_keyframe_time(13, 20)
+    print(RetimingUtils.get_last_keyframe_time())
+    # RetimingUtils.change_keyframe_time(13, 20)

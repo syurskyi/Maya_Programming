@@ -4,7 +4,7 @@ import maya.cmds as cmds
 import maya.mel as mel
 
 
-class ZurbriggRetimingUtils(object):
+class RetimingUtils(object):
 
     @classmethod
     def retime_keys(cls, retime_value, incremental, move_to_next):
@@ -153,7 +153,7 @@ class ZurbriggRetimingUi(object):
     @classmethod
     def retime(cls, value, incremental, *args):
         move_to_next = cmds.checkBox(cls.move_to_next_cb, q=True, value=True)
-        ZurbriggRetimingUtils.retime_keys(value, incremental, move_to_next)
+        RetimingUtils.retime_keys(value, incremental, move_to_next)
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@ import maya.cmds as cmds
 import maya.mel as mel
 
 
-class ZurbriggRetimingUtils(object):
+class RetimingUtils(object):
 
     @classmethod
     def retime_keys(cls, retime_value, incremental, move_to_next):
@@ -70,5 +70,5 @@ class ZurbriggRetimingUtils(object):
 
 if __name__ == "__main__":
 
-    # print(ZurbriggRetimingUtils.get_last_keyframe_time())
-    ZurbriggRetimingUtils.retime_keys(1, False, False)
+    # print(RetimingUtils.get_last_keyframe_time())
+    RetimingUtils.retime_keys(1, False, False)

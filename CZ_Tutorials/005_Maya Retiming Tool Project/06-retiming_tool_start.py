@@ -7,7 +7,7 @@ import maya.mel as mel
 import maya.OpenMayaUI as omui
 
 
-class ZurbriggRetimingUtils(object):
+class RetimingUtils(object):
 
     @classmethod
     def retime_keys(cls, retime_value, incremental, move_to_next):
